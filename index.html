@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chad's Recipies</title>
+  </head>
+  <style>
+    @media only screen and (max-width: 600px) {
+      body {
+        display: grid;
+        grid-template-columns: auto;
+        background-color: lightsalmon;
+        font-family: "Courier New", Courier, monospace;
+      }
+      #header {
+        background-color: rgb(160, 148, 240);
+        color: white;
+        border: thin solid black;
+        width: 100%;
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        font-size: 60px;
+        margin-bottom: 5px;
+      }
+      #nav {
+        display: grid;
+        grid-template-columns: 14.25% 14.25% 14.25% 14.25% 14.25% 14.25% 14.25%;
+      }
+
+      #footer {
+        display: grid;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        background-color: rgb(160, 148, 240);
+        color: white;
+        border: thin solid black;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      #content {
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-items: center;
+      }
+      .card {
+        width: 500px;
+        background-color: darkorchid;
+        border: thin solid black;
+        border-radius: 5%;
+        box-sizing: border-box;
+        padding: 10px;
+        margin: 1px;
+      }
+      img {
+        border: thick dotted darkgrey;
+        border-radius: 15%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 256px;
+      }
+    }
+    @media only screen and (min-width: 600px) {
+      body {
+        background-color: lightsalmon;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      #header {
+        background-color: rgb(160, 148, 240);
+        color: white;
+        border: thin solid black;
+        width: 100%;
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        font-size: 60px;
+        margin-bottom: 5px;
+      }
+      #nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+
+      #footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        background-color: rgb(160, 148, 240);
+        color: white;
+        border: thin solid black;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      #content {
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-items: center;
+      }
+      .card {
+        width: 500px;
+        background-color: darkorchid;
+        border: thin solid black;
+        border-radius: 5%;
+        box-sizing: border-box;
+        padding: 10px;
+        margin: 1px;
+      }
+      img {
+        border: thick dotted darkgrey;
+        border-radius: 15%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 256px;
+      }
+    }
+    @media only screen and (min-width: 768px) {
+      body {
+        background-color: lightgoldenrodyellow;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+      #header {
+        background-color: rgb(160, 148, 240);
+        color: white;
+        border: thin solid black;
+        width: 100%;
+        text-align: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        font-size: 60px;
+        margin-bottom: 5px;
+      }
+      #nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+      #content {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        justify-items: center;
+      }
+      .card {
+        width: 350px;
+        height: 350px;
+        background-color: darkorchid;
+        border: thin solid black;
+        border-radius: 5%;
+        box-sizing: border-box;
+        padding: 10px;
+        margin: 5%;
+      }
+      img {
+        border: thick dotted darkgrey;
+        border-radius: 15%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 192px;
+      }
+      #footer {
+        display: grid;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        background-color: rgb(160, 148, 240);
+        color: white;
+        border: thin solid black;
+        width: 100%;
+        box-sizing: border-box;
+        grid-column: 1/5;
+      }
+    }
+    @media only screen and (min-width: 992px) {
+      body {
+        display: grid;
+        grid-template-columns: 16% fit-content(1fr) fit-content(1fr) fit-content(
+            1fr
+          );
+        background-color: lightblue;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      #header {
+        grid-column: 1/5;
+      }
+      #nav {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows:
+          fit-content(3%) fit-content(3%) fit-content(3%) fit-content(3%)
+          fit-content(3%) fit-content(3%) fit-content(3%);
+        margin-right: 1%;
+      }
+      #nav > div {
+        width: 100%;
+      }
+      #content {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        justify-content: center;
+        grid-column: 2/5;
+        margin: 3%;
+        column-gap: 2%;
+      }
+      .card {
+        width: 300px;
+        height: 350px;
+        background-color: darkorchid;
+        border: thin solid black;
+        border-radius: 5%;
+        box-sizing: border-box;
+        margin: 5%;
+      }
+    }
+    .cardLink {
+      color: snow;
+      font-size: 28px;
+    }
+    .navLink {
+      color: black;
+    }
+
+    #footer {
+      background-color: rgb(160, 148, 240);
+      color: white;
+      border: thin solid black;
+      width: 100%;
+      font-size: 16pt;
+      overflow: auto;
+    }
+    #author {
+      text-align: left;
+    }
+    #course {
+      text-align: center;
+    }
+    #date {
+      text-align: right;
+    }
+
+    #nav > div {
+      background-color: lavenderblush;
+      border: solid thin black;
+      text-align: center;
+    }
+    #nav > div:hover {
+      background-color: darkorchid;
+    }
+    .navLink {
+      color: black;
+      font-weight: bold;
+    }
+
+    .title {
+      text-align: center;
+    }
+
+    .center {
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+  </style>
+  <body>
+    <div id="header">Chad's Recipes</div>
+    <div id="nav">
+      <div><a class="navLink" href="index.html"> Home</a></div>
+      <div><a class="navLink" href="pastaSauce.html">Pasta Sauce</a></div>
+      <div>
+        <a class="navLink" href="pulledPork.html">Pulled Pork Sandwich</a>
+      </div>
+      <div>
+        <a class="navLink" href="twiceBakedPotato.html">Twice Baked Potato</a>
+      </div>
+      <div>
+        <a class="navLink" href="chickenQuesadilla.html">Chicken Quesadilla</a>
+      </div>
+      <div><a class="navLink" href="poutine.html">Poutine</a></div>
+      <div>
+        <a class="navLink" href="chocoCheesecake.html">Chocolate Cheescake</a>
+      </div>
+    </div>
+    <div id="content">
+      <div class="card">
+        <div><img src="images/PastaSauce.jpg" /></div>
+        <div class="title">
+          <a class="cardLink" href="pastaSauce.html"> Pasta Sauce</a>
+        </div>
+        <div class="center">
+          This recipie is for a Tomato-based sauce with ground beef.
+        </div>
+      </div>
+      <div class="card">
+        <div><img src="images/PulledPork.jpg" /></div>
+        <div class="title">
+          <a class="cardLink" href="pulledPork.html"> Pulled Pork Sandwich</a>
+        </div>
+        <div class="center">This recipie is for a pulled pork sandwich.</div>
+      </div>
+      <div class="card">
+        <div><img src="images/TwiceBakedPotato.jpg" /></div>
+        <div class="title">
+          <a class="cardLink" href="twiceBakedPotato.html">
+            Twice Baked Potato</a
+          >
+        </div>
+        <div class="center">This recipie is for a twice baked potato.</div>
+      </div>
+      <div class="card">
+        <div><img src="images/ChickenQuesadilla.jpg" /></div>
+        <div class="title">
+          <a class="cardLink" href="chickenQuesadilla.html"
+            >Chicken Quesadilla</a
+          >
+        </div>
+        <div class="center">This recipie is for a chicken quesadilla.</div>
+      </div>
+      <div class="card">
+        <div><img src="images/Poutine.jpg" /></div>
+        <div class="title">
+          <a class="cardLink" href="poutine.html"> Poutine</a>
+        </div>
+        <div class="center">
+          This recipie is for a poutine with chicken gravy.
+        </div>
+      </div>
+      <div class="card">
+        <div><img src="images/ChocolateCheesecake.jpg" /></div>
+        <div class="title">
+          <a class="cardLink" href="chocoCheesecake.html">
+            Chocolate Cheesecake</a
+          >
+        </div>
+        <div class="center">
+          This recipie is for a choclate cheesecake with raspberries.
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div id="author">Chad Blackier</div>
+      <div id="course">Intro to Web Development</div>
+      <div id="date">October 12th 2022</div>
+    </div>
+  </body>
+</html>
